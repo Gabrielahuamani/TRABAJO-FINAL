@@ -1,0 +1,59 @@
+
+```{r}
+library(rio)
+library(htmltab)
+library(tidyr)
+library(stringr)
+library(magrittr)
+library(dplyr)
+```
+
+##Leyendo Excel:
+
+#Respeto de los derechos políticos y Libertades Civiles (2008)
+```{r}
+lkXLSX1="https://github.com/Gabrielahuamani/TRABAJO-FINAL/raw/master/Respeto_DerechosPol%C3%ADticos_y_LibertadesCiviles_2008.xlsx"
+dataExcel1=import(lkXLSX1)
+```
+Limpieza de dataExcel1
+```{r}
+#Cambio los nombres de las variables por algo mÃ¡s amigable y pequeÃ±o.
+names(dataExcel1) = c("Pais", "DePolLiCi2008")
+str(dataExcel1)
+```
+
+#Respeto de los derechos políticos y Libertades Civiles (2009)
+```{r}
+lkXLSX2="https://github.com/Gabrielahuamani/TRABAJO-FINAL/raw/master/Respeto_DerechosPol%C3%ADticos_%20y_Libertades%20Civiles_2009.xlsx"
+dataExcel2=import(lkXLSX2)
+```
+Limpieza de dataExcel2
+```{r}
+#Cambio los nombres de las variables por algo mÃ¡s amigable y pequeÃ±o.
+names(dataExcel2) = c("Pais", "DePolLiCi2009")
+str(dataExcel2)
+```
+
+#Respeto de los derechos políticos y Libertades Civiles (2010)
+```{r}
+lkXLSX3="https://github.com/Gabrielahuamani/TRABAJO-FINAL/raw/master/Respeto_Derechos%20Pol%C3%ADticos_y_LibertadesCiviles_2010.xlsx"
+dataExcel3=import(lkXLSX3)
+```
+Limpieza de dataExcel3
+```{r}
+#Cambio los nombres de las variables por algo mÃ¡s amigable y pequeÃ±o.
+names(dataExcel3) = c("Pais", "DePolLiCi2010")
+str(dataExcel3)
+```
+#Unir los 3 data frames
+#primero unir las dos primeras datas
+```{r}
+final=merge(dataExcel1,dataExcel2,by.x='Pais', by.y='Pais') 
+head(final)
+```
+#unir la tercera data
+```{r}
+finalfinal=merge(final,dataExcel3,by.x='Pais', by.y='Pais') 
+head(finalfinal)
+```
+
