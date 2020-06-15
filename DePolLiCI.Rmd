@@ -1,4 +1,4 @@
-
+#DATA EXTRAÍDA DE  http://idd-lat.org/2016/ 
 ```{r}
 library(rio)
 library(htmltab)
@@ -19,7 +19,10 @@ Limpieza de dataExcel1
 ```{r}
 #Cambio los nombres de las variables por algo mÃ¡s amigable y pequeÃ±o.
 names(dataExcel1) = c("Pais", "DePolLiCi2008")
+names(dataExcel1)
 str(dataExcel1)
+table(dataExcel1$DePolLiCi2008,useNA ='always') #quiero ver los NAs
+
 ```
 
 #Respeto de los derechos políticos y Libertades Civiles (2009)
@@ -31,7 +34,9 @@ Limpieza de dataExcel2
 ```{r}
 #Cambio los nombres de las variables por algo mÃ¡s amigable y pequeÃ±o.
 names(dataExcel2) = c("Pais", "DePolLiCi2009")
+names(dataExcel2)
 str(dataExcel2)
+table(dataExcel2$DePolLiCi2009,useNA ='always') #quiero ver los NAs
 ```
 
 #Respeto de los derechos políticos y Libertades Civiles (2010)
@@ -44,6 +49,7 @@ Limpieza de dataExcel3
 #Cambio los nombres de las variables por algo mÃ¡s amigable y pequeÃ±o.
 names(dataExcel3) = c("Pais", "DePolLiCi2010")
 str(dataExcel3)
+table(dataExcel3$DePolLiCi2010,useNA ='always') #quiero ver los NAs
 ```
 #Unir los 3 data frames
 #primero unir las dos primeras datas
